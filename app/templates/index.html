@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "_macros.html" as macros %}
+
+{% block title %}landing Page{% endblock %}
+
+
+
+
+
+
+
+
+ {% block body %}
+<div class="page-header">
+    <h1>Hello, {% if current_user.is_authenticated %}
+        {{ current_user.username }}
+        {% else %}
+        Stranger
+        {% endif %}!</h1>
+</div>
+<div>
+    {% if current_user.can(Permission.WRITE) %}
+    {{ wtf.quick_form(form) }}
+    {% endif %}
+</div>
+
+<div class="post-tabs">
+    <ul class="nav nav-tabs">
+
+        {% if not show_followed %}
+        <li class="nav-item"><a class="nav-link active" href="{{ url_for('.show_all') }}">All</a></li>
+        {% else %}
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('.show_all') }}">All</a></li>
+        {% endif %}
+
+        {% if current_user.is_authenticated %}
+           {% if show_followed %}
+             <li class="nav-item"><a class="nav-link active" href="{{ url_for('.show_followed') }}">Followers</a></li>
+           {% elif not show_followed %}
+           <li class="nav-item"><a class="nav-link" href="{{ url_for('.show_followed') }}">Followers</a></li>
+           {% endif %}
+        {% endif %}
+    </ul>
+    {% include '_posts.html' %}
+</div>
+
+{% if pagination %}
+<div class="pagination">
+    {{ macros.pagination_widget(pagination, '.index') }}
+</div>
+{% endif %}
+{% endblock %}
+
+
+
