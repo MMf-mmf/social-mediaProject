@@ -8,7 +8,7 @@ class Config:
     MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS', 'true').lower() in \
         ['true', 'on', '1']
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME', 'seltx99@gmail.com')
-    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD', 'jdtdoqoiajwlsmoq')
+    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     FLASKY_MAIL_SUBJECT_PREFIX = '[Flasky]'
     FLASKY_MAIL_SENDER = 'Flasky Admin seltx99@gmail.com'
     FLASKY_ADMIN = os.environ.get('FLASKY_ADMIN', 'seltx99@gmail.com')
@@ -41,6 +41,9 @@ class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'sqlite:///' + os.path.join(basedir, 'data.sqlite')
 
+
+
+    # this sends all the debuging info usely displyd to the console during development to to the admins email addres
     @classmethod
     def init_app(cls, app):
         Config.init_app(app)
