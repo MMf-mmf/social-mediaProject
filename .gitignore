@@ -3,3 +3,7 @@ __pycache__
 .idea
 tmp/
 *.sqlite
+
+#Environment files
+.env
+.env-mysql
