@@ -1,6 +1,9 @@
-this website is a social media platform where users can do things like post, comment, and follow other users
 
-overview of technologies used are.
+
+<span>this website is a social media platform where users can do things like post, comment, and follow other users </span>
+
+
+<h1> overview of technologies used are. </h1>
 
 safe login using email verification
 utilizes cookies,  and password hashing to store user passwords in the database
