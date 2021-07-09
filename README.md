@@ -1,12 +1,19 @@
 
 
-<span>this website is a social media platform where users can do things like post, comment, and follow other users </span>
+<h4>this website is a social media platform where users can do things like post, comment, and follow other users </h4>
 
 
-<h1> overview of technologies used are. </h1>
+<h1>App / technologies overview. </h1>
 
-safe login using email verification
-utilizes cookies,  and password hashing to store user passwords in the database
-uses permissions to give more privileges to certain users
 
-you can find this project at   https://doubleching.herokuapp.com/
+<ol>
+  <li>python, flask</li>
+  <li>safe login using email verification</li>
+  <li>utilizes cookies,  and password hashing to store user passwords in the database</li>
+  <li>uses permissions to give more privileges to certain users</li>
+</ol>
+
+
+
+
+the app can be found at   https://doubleching.herokuapp.com/
