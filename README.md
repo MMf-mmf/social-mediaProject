@@ -16,6 +16,6 @@
 
 
 
-the app can be found at   https://doubleching.herokuapp.com/
+
 
 this app was completed with the Flask maga tutorial
